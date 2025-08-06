@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estética Belle Vie - Cuidando de Você</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon (Exemplo) -->
+  <link rel="icon" href="https://placehold.co/32x32/f4e9e7/a67b5b?text=BV" type="image/png">
+
+  <script>
+    // Configuração customizada do Tailwind CSS
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'brand-primary': '#a67b5b', // Um tom de bronze/dourado
+            'brand-secondary': '#f4e9e7', // Um rosa bem claro/bege
+            'brand-light': '#ffffff',
+            'brand-dark': '#3a3a3a',
+            'brand-accent': '#d4b29e',
+          },
+          fontFamily: {
+            'serif': ['Playfair Display', 'serif'],
+            'sans': ['Montserrat', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Estilos adicionais para detalhes finos */
+    .hero-bg {
+      background-image: url('https://kannoarquitetura.com.br/wp-content/uploads/2023/06/Editadas-24.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* CORREÇÃO: Impede que o header fixo sobreponha o conteúdo */
+    html {
+      scroll-padding-top: 80px;
+    }
+
+    /* ANIMAÇÃO: Estilos para animação de fade-in ao rolar a página */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .animate-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-brand-light font-sans text-brand-dark">
+
+<!-- =========== HEADER / NAVBAR =========== -->
+<header id="header" class="bg-brand-light shadow-md sticky top-0 z-50 transition-all duration-300 h-[80px] flex items-center">
+  <nav class="container mx-auto px-6 flex justify-between items-center w-full">
+    <a href="./logo.png" class="text-2xl font-serif font-bold text-brand-primary">
+      Belle Vie
+    </a>
+    <div class="hidden lg:flex items-center space-x-8">
+      <a href="#inicio" class="text-brand-dark hover:text-brand-primary transition-colors">Início</a>
+      <a href="#servicos" class="text-brand-dark hover:text-brand-primary transition-colors">Serviços</a>
+      <a href="#sobre" class="text-brand-dark hover:text-brand-primary transition-colors">Sobre Nós</a>
+      <a href="#contato" class="text-brand-dark hover:text-brand-primary transition-colors">Contato</a>
+    </div>
+    <a href="#contato" class="hidden lg:block bg-brand-primary text-white px-6 py-2 rounded-full hover:bg-brand-accent transition-colors">
+      Agende sua Avaliação
+    </a>
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="lg:hidden text-brand-dark focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+    </button>
+  </nav>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden absolute top-[80px] left-0 w-full bg-brand-light shadow-md px-6 pt-2 pb-4">
+    <a href="#inicio" class="block py-2 text-brand-dark hover:text-brand-primary">Início</a>
+    <a href="#servicos" class="block py-2 text-brand-dark hover:text-brand-primary">Serviços</a>
+    <a href="#sobre" class="block py-2 text-brand-dark hover:text-brand-primary">Sobre Nós</a>
+    <a href="#contato" class="block py-2 text-brand-dark hover:text-brand-primary">Contato</a>
+    <a href="#contato" class="mt-4 block text-center bg-brand-primary text-white px-6 py-2 rounded-full hover:bg-brand-accent transition-colors">
+      Agende sua Avaliação
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- =========== HERO SECTION =========== -->
+  <section id="inicio" class="hero-bg h-[calc(100vh-80px)] flex items-center">
+    <div class="container mx-auto px-6 text-center">
+      <div class="bg-brand-light bg-opacity-70 p-8 md:p-12 rounded-lg max-w-3xl mx-auto animate-on-scroll">
+        <h1 class="text-4xl md:text-6xl font-serif font-bold text-brand-primary mb-4">Realce sua beleza natural</h1>
+        <p class="text-lg md:text-xl text-brand-dark mb-8 font-light">Tratamentos estéticos avançados para o seu bem-estar e autoestima.</p>
+        <a href="#servicos" class="bg-brand-primary text-white px-8 py-3 rounded-full text-lg hover:bg-brand-accent transition-transform duration-300 transform hover:scale-105">
+          Nossos serviços
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========== SERVICES SECTION =========== -->
+  <section id="servicos" class="py-20 bg-brand-secondary">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="text-4xl font-serif text-brand-primary">Nossos Serviços</h2>
+        <p class="text-lg text-brand-dark mt-2 max-w-2xl mx-auto">Oferecemos uma gama completa de tratamentos para cuidar de você da cabeça aos pés.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service Cards com animação -->
+        <div class="bg-brand-light p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 animate-on-scroll">
+          <div class="flex justify-center mb-4">
+            <img src="https://placehold.co/80x80/a67b5b/ffffff?text=Icon" alt="Ícone Limpeza de Pele" class="rounded-full" onerror="this.onerror=null;this.src='https://placehold.co/80x80/f4e9e7/a67b5b?text=Error';">
+          </div>
+          <h3 class="text-2xl font-serif text-brand-dark mb-2">Limpeza de Pele Profunda</h3>
+          <p class="text-brand-dark font-light">Renove sua pele com nossa limpeza profunda, que remove impurezas e cravos, deixando seu rosto mais saudável e luminoso.</p>
+        </div>
+        <div class="bg-brand-light p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 animate-on-scroll" style="transition-delay: 100ms;">
+          <div class="flex justify-center mb-4">
+            <img src="https://placehold.co/80x80/a67b5b/ffffff?text=Icon" alt="Ícone Drenagem Linfática" class="rounded-full" onerror="this.onerror=null;this.src='https://placehold.co/80x80/f4e9e7/a67b5b?text=Error';">
+          </div>
+          <h3 class="text-2xl font-serif text-brand-dark mb-2">Drenagem Linfática</h3>
+          <p class="text-brand-dark font-light">Reduza o inchaço e a retenção de líquidos com nossa massagem de drenagem linfática, promovendo relaxamento e bem-estar.</p>
+        </div>
+        <div class="bg-brand-light p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 animate-on-scroll" style="transition-delay: 200ms;">
+          <div class="flex justify-center mb-4">
+            <img src="https://placehold.co/80x80/a67b5b/ffffff?text=Icon" alt="Ícone Microagulhamento" class="rounded-full" onerror="this.onerror=null;this.src='https://placehold.co/80x80/f4e9e7/a67b5b?text=Error';">
+          </div>
+          <h3 class="text-2xl font-serif text-brand-dark mb-2">Microagulhamento</h3>
+          <p class="text-brand-dark font-light">Estimule a produção de colágeno e trate cicatrizes, manchas e linhas finas com a técnica de microagulhamento.</p>
+        </div>
+        <div class="bg-brand-light p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 animate-on-scroll">
+          <div class="flex justify-center mb-4">
+            <img src="https://placehold.co/80x80/a67b5b/ffffff?text=Icon" alt="Ícone Pump-up" class="rounded-full" onerror="this.onerror=null;this.src='https://placehold.co/80x80/f4e9e7/a67b5b?text=Error';">
+          </div>
+          <h3 class="text-2xl font-serif text-brand-dark mb-2">Pump-up a vacum</h3>
+          <p class="text-brand-dark font-light">Melhore o contorno e a firmeza dos glúteos com nossa técnica de vacuoterapia que estimula a musculatura local.</p>
+        </div>
+        <div class="bg-brand-light p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 animate-on-scroll" style="transition-delay: 100ms;">
+          <div class="flex justify-center mb-4">
+            <img src="https://placehold.co/80x80/a67b5b/ffffff?text=Icon" alt="Ícone Massagem Guachá" class="rounded-full" onerror="this.onerror=null;this.src='https://placehold.co/80x80/f4e9e7/a67b5b?text=Error';">
+          </div>
+          <h3 class="text-2xl font-serif text-brand-dark mb-2">Massagem Guachá</h3>
+          <p class="text-brand-dark font-light">Técnica milenar chinesa que utiliza pedras de jade para promover uma drenagem facial, aliviando tensões e melhorando a circulação.</p>
+        </div>
+        <div class="bg-brand-light p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300 animate-on-scroll" style="transition-delay: 200ms;">
+          <div class="flex justify-center mb-4">
+            <img src="https://placehold.co/80x80/a67b5b/ffffff?text=Icon" alt="Ícone de serviço genérico" class="rounded-full" onerror="this.onerror=null;this.src='https://placehold.co/80x80/f4e9e7/a67b5b?text=Error';">
+          </div>
+          <h3 class="text-2xl font-serif text-brand-dark mb-2">Peeling Químico</h3>
+          <p class="text-brand-dark font-light">Renove as camadas da pele, tratando manchas, acne e sinais de envelhecimento para um rosto mais uniforme e rejuvenescido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========== ABOUT US SECTION =========== -->
+  <section id="sobre" class="py-20 bg-brand-light overflow-hidden">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2 animate-on-scroll">
+          <img src="https://placehold.co/600x400/f4e9e7/a67b5b?text=Foto+da+Equipe+ou+Clínica" alt="Equipe da clínica" class="rounded-lg shadow-xl w-full" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f4e9e7/a67b5b?text=Error';">
+        </div>
+        <div class="md:w-1/2 animate-on-scroll" style="transition-delay: 150ms;">
+          <h2 class="text-4xl font-serif text-brand-primary mb-4">Sobre a Belle Vie</h2>
+          <p class="text-brand-dark mb-4 font-light leading-relaxed">
+            Na Clínica de Estética Belle Vie, nossa missão é combinar tecnologia de ponta com um atendimento humanizado e personalizado. Acreditamos que a beleza é uma expressão de saúde e bem-estar.
+          </p>
+          <p class="text-brand-dark mb-6 font-light leading-relaxed">
+            Nossa equipe é formada por profissionais altamente qualificados e apaixonados pelo que fazem, sempre em busca das melhores e mais seguras técnicas para oferecer resultados incríveis e naturais. Aqui, cada cliente é único e recebe um plano de tratamento exclusivo para suas necessidades.
+          </p>
+          <a href="#contato" class="bg-brand-primary text-white px-8 py-3 rounded-full hover:bg-brand-accent transition-colors">
+            Fale Conosco
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========== CONTACT SECTION =========== -->
+  <section id="contato" class="py-20 bg-brand-secondary">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="text-4xl font-serif text-brand-primary">Encontre-nos</h2>
+        <p class="text-lg text-brand-dark mt-2 max-w-2xl mx-auto">Tem alguma dúvida ou gostaria de agendar uma avaliação? Preencha o formulário ou visite-nos!</p>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-10 bg-white p-8 md:p-12 rounded-lg shadow-xl animate-on-scroll">
+        <!-- Contact Form -->
+        <div class="lg:w-1/2">
+          <form id="contact-form">
+            <div class="mb-4">
+              <label for="name" class="block text-brand-dark mb-2">Nome Completo</label>
+              <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent" required>
+            </div>
+            <div class="mb-4">
+              <label for="email" class="block text-brand-dark mb-2">E-mail</label>
+              <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent" required>
+            </div>
+            <div class="mb-4">
+              <label for="phone" class="block text-brand-dark mb-2">Telefone</label>
+              <input type="tel" id="phone" name="phone" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent">
+            </div>
+            <div class="mb-6">
+              <label for="message" class="block text-brand-dark mb-2">Mensagem</label>
+              <textarea id="message" name="message" rows="5" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent" required></textarea>
+            </div>
+            <button type="submit" class="w-full bg-brand-primary text-white py-3 rounded-lg text-lg font-medium hover:bg-brand-accent transition-colors">
+              Enviar Mensagem
+            </button>
+            <p id="form-status" class="text-center mt-4"></p>
+          </form>
+        </div>
+        <!-- Contact Info -->
+        <div class="lg:w-1/2 lg:pl-10">
+          <h3 class="text-2xl font-serif text-brand-dark mb-6">Nossas Informações</h3>
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <svg class="w-6 h-6 text-brand-primary mr-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              <div>
+                <h4 class="font-bold text-brand-dark">Endereço</h4>
+                <p class="text-brand-dark font-light">Rua das Flores, 123, Sala 4, Bairro Elegance<br>Cidade, Estado, CEP 12345-678</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <svg class="w-6 h-6 text-brand-primary mr-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              <div>
+                <h4 class="font-bold text-brand-dark">E-mail</h4>
+                <p class="text-brand-dark font-light">contato@bellevie.com.br</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <svg class="w-6 h-6 text-brand-primary mr-4 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              <div>
+                <h4 class="font-bold text-brand-dark">Telefone / WhatsApp</h4>
+                <p class="text-brand-dark font-light">(11) 98765-4321</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========== MAPS SECTION =========== -->
+  <section id="localizacao" class="w-full">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.3134399365895!2d-38.48269028860745!3d-3.74172919621646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7c7489568b923e1%3A0x14458538a1dd44ba!2sDra.%20Chris%20Marchetti%20%7C%20Reestrutura%C3%A7%C3%A3o%20Facial%20em%20Fortaleza!5e0!3m2!1spt-BR!2sbr!4v1754345581898!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+</main>
+
+<!-- =========== FOOTER =========== -->
+<footer class="bg-brand-dark text-brand-secondary">
+  <div class="container mx-auto px-6 py-10">
+    <!-- Container principal do footer, centralizando todo o conteúdo -->
+    <div class="flex flex-col items-center space-y-6 text-center">
+
+      <!-- Ícones de redes sociais -->
+      <div class="flex space-x-6">
+        <a href="#" class="text-brand-secondary hover:text-brand-accent transition-colors">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+        </a>
+        <a href="#" class="text-brand-secondary hover:text-brand-accent transition-colors">
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.644-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.358-.2 6.78-2.618 6.98-6.98.059-1.281.073-1.689.073-4.948s-.014-3.667-.072-4.947c-.2-4.358-2.618-6.78-6.98-6.98C15.667.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" /></svg>
+        </a>
+      </div>
+
+      <!-- Copyright e Logo da Agência -->
+      <div>
+        <p class="text-sm">&copy; 2024 Belle Vie Estética. Todos os direitos reservados.</p>
+        <div class="flex items-center justify-center space-x-2 mt-2">
+          <span class="text-xs text-brand-secondary/70">Desenvolvido por</span>
+          <a href="#" target="_blank" rel="noopener noreferrer" title="LeePCode Software House">
+            <img src="logo.png" alt="Logo da Agência" class="h-5">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Botão Flutuante do WhatsApp -->
+<a href="https://wa.me/SEU_NUMERO_WHATSAPP" target="_blank"
+   class="fixed bottom-5 right-5 bg-green-500 text-white w-14 h-14 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 transition-colors z-50">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       viewBox="0 0 24 24"
+       fill="currentColor"
+       class="w-8 h-8">
+    <path d="M12 .5C5.648.5.5 5.648.5 12c0 2.124.564 4.18 1.632 6.004L.5 23.5l5.656-1.606A11.46 11.46 0 0 0 12 23.5c6.352 0 11.5-5.148 11.5-11.5S18.352.5 12 .5Zm0 20.5a9.466 9.466 0 0 1-4.798-1.28l-.34-.203-3.36.953.957-3.27-.222-.347A9.463 9.463 0 0 1 2.5 12c0-5.238 4.262-9.5 9.5-9.5s9.5 4.262 9.5 9.5-4.262 9.5-9.5 9.5Z"/>
+    <path d="M17.49 14.616c-.298-.149-1.764-.87-2.038-.97-.273-.1-.473-.148-.673.15s-.773.97-.947 1.17-.349.224-.648.075c-.298-.149-1.258-.464-2.395-1.478-.885-.79-1.48-1.767-1.655-2.065-.173-.298-.018-.46.13-.609.134-.133.298-.347.447-.52.149-.174.199-.298.298-.497.099-.198.05-.373-.025-.522-.075-.149-.673-1.62-.922-2.216-.243-.584-.491-.504-.673-.514-.174-.008-.373-.01-.572-.01-.198 0-.52.074-.792.372s-1.04 1.017-1.04 2.48 1.065 2.876 1.213 3.074c.149.198 2.094 3.197 5.074 4.48.71.307 1.263.49 1.695.626.712.227 1.36.195 1.872.119.571-.085 1.764-.72 2.014-1.415.248-.695.248-1.29.173-1.415-.074-.124-.273-.198-.571-.347Z"/>
+  </svg>
+</a>
+
+
+<!-- Script para o menu mobile, formulário e animações -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Lógica para o menu mobile
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('#mobile-menu a, #header a[href^="#"]');
+
+    mobileMenuButton.addEventListener('click', function() {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+      });
+    });
+
+    // Lógica para o formulário de contato
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      formStatus.textContent = 'Enviando...';
+      formStatus.style.color = '#a67b5b';
+
+      setTimeout(() => {
+        formStatus.textContent = 'Mensagem enviada com sucesso!';
+        formStatus.style.color = 'green';
+        contactForm.reset();
+        setTimeout(() => {
+          formStatus.textContent = '';
+        }, 3000);
+      }, 1500);
+    });
+
+    // Lógica para animação ao rolar
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, {
+      threshold: 0.1 // A animação começa quando 10% do elemento está visível
+    });
+
+    animatedElements.forEach(element => {
+      observer.observe(element);
+    });
+  });
+</script>
+</body>
+</html>
